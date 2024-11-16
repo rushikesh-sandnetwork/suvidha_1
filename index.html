@@ -12,46 +12,44 @@
         background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
         min-height: 100vh;
+        overflow-x: hidden;
       }
 
-      h1 {
-        font-size: 2.5rem;
-        color: #444;
-        margin: 150px 0 20px;
-        text-align: center;
-      }
-
-      /* Logo container styles */
       header {
         width: 100%;
-        height: 20%;
+        height: 80px; /* Fixed height for header */
         position: fixed;
         top: 0;
         left: 0;
         z-index: 10;
         display: flex;
         justify-content: center;
+        align-items: center;
         background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
 
       .suvidha-logo {
-        width: 100%;
-        max-width: 100%;
+        max-width: 200px;
         height: auto;
         object-fit: contain;
       }
 
-      /* Main container for buttons */
+      h1 {
+        font-size: 2.5rem;
+        color: #444;
+        margin: 100px 0 20px; /* Add space below the fixed header */
+        text-align: center;
+      }
+
       .container {
         max-width: 700px;
         background: #fff;
         padding: 40px 30px;
         border-radius: 12px;
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        margin-top: 20px; /* Adjusted for logo */
+        margin: 0 auto;
         text-align: center;
       }
 
@@ -85,39 +83,37 @@
         box-shadow: 0 6px 15px rgba(101, 51, 255, 0.5);
       }
 
-      /* Footer styles */
       footer {
         text-align: center;
-        margin-top: auto; /* Ensures footer stays at the bottom */
         color: #555;
         font-size: 14px;
-        padding: 10px 0;
         background: #f1f1f1;
         width: 100%;
-        height: auto; /* Let height adjust based on content */
+        margin-top: auto; /* Push footer to the bottom */
+        padding: 10px 0;
       }
 
       .footer-logos {
-        width: 100%; /* Make sure it takes the full width */
+        width: 100%;
         display: flex;
         justify-content: center;
-        gap: 15px;
-        margin-bottom: 5px;
+        align-items: center;
+        background: #e0e0e0;
       }
 
       .footer-logo {
         width: 100%;
-        max-width: 100%; /* Ensure it takes full width of the screen */
-        height: auto; /* Maintain aspect ratio */
+        max-width: 100%;
+        height: 100px; /* Stretch height */
+        object-fit: cover;
       }
 
       footer p {
-        margin-top: 10px;
+        margin: 10px 0 0;
         font-size: 12px;
         font-weight: bold;
       }
 
-      /* Media query for tablets and smaller devices */
       @media (max-width: 768px) {
         h1 {
           font-size: 2rem;
@@ -133,9 +129,11 @@
           font-size: 18px;
           padding: 12px 18px;
         }
+        .footer-logo {
+          height: 80px;
+        }
       }
 
-      /* Media query for mobile devices */
       @media (max-width: 480px) {
         h1 {
           font-size: 1.8rem;
@@ -145,7 +143,6 @@
         }
         .suvidha-logo {
           max-width: 100px;
-          width: 30%;
         }
         .download-btn {
           font-size: 16px;
@@ -155,22 +152,21 @@
           font-size: 12px;
         }
         .footer-logo {
-          max-width: 480px;
-          width: 100%;
+          height: 60px;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Suvidha logo at the top -->
+    <!-- Header -->
     <header>
       <img class="suvidha-logo" src="./Suvidha Logo.png" alt="Suvidha Logo" />
     </header>
 
-    <!-- Heading text -->
+    <!-- Heading -->
     <h1>Download SUVIDHA PDFs</h1>
 
-    <!-- Main content card -->
+    <!-- Main content -->
     <div class="container">
       <div class="button-container">
         <a
@@ -181,7 +177,6 @@
         >
           Suvidha Presentation
         </a>
-
         <a
           class="download-btn"
           href="https://drive.google.com/uc?export=download&id=19AGWdsHpKPqUBkvJvaZWRKjRfFl1kLFo"
@@ -193,12 +188,11 @@
       </div>
     </div>
 
-    <!-- Footer with logos and co-partner text -->
+    <!-- Footer -->
     <footer>
       <div class="footer-logos">
         <img class="footer-logo" src="./Strip.jpg" alt="Co-Partners" />
       </div>
-
       <p>© 2024 SUVIDHA. All Rights Reserved.</p>
     </footer>
   </body>
