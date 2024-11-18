@@ -17,23 +17,33 @@
         padding: 0;
         background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
         display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden; /* Prevent scrolling */
+      }
+
+      .mobile-view {
+        width: 375px; /* Mobile width */
+        height: 100%; /* Full height */
+        background: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 10px; /* Optional rounded corners */
+        display: flex;
         flex-direction: column;
-        min-height: 100vh;
-        overflow-x: hidden;
+        overflow: hidden; /* Hide extra content */
+        position: relative;
       }
 
       header {
         width: 100%;
         height: 80px; /* Fixed height for header */
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 10;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: white;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 10;
       }
 
       .suvidha-logo {
@@ -42,20 +52,28 @@
         object-fit: contain;
       }
 
-      h1 {
-        font-size: 2.5rem;
-        color: #444;
-        margin: 100px 0 20px; /* Add space below the fixed header */
+      .content {
+        flex: 1; /* Take up the remaining space */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
         text-align: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+        color: #444;
+        margin-bottom: 20px; /* Add space below heading */
       }
 
       .container {
         max-width: 700px;
         background: #fff;
-        padding: 40px 30px;
+        padding: 20px 30px;
         border-radius: 12px;
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        margin: 0 auto;
         text-align: center;
       }
 
@@ -95,7 +113,6 @@
         font-size: 14px;
         background: #f1f1f1;
         width: 100%;
-        margin-top: auto; /* Push footer to the bottom */
         padding: 10px 0;
       }
 
@@ -109,9 +126,8 @@
 
       .footer-logo {
         width: 100%;
-        max-width: 100%;
-        height: 100px; /* Stretch height */
-        object-fit: cover;
+        height: auto;
+        object-fit: contain;
       }
 
       footer p {
@@ -120,27 +136,13 @@
         font-weight: bold;
       }
 
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 2rem;
-        }
-        .container {
-          max-width: 90%;
-          padding: 30px;
-        }
-        .suvidha-logo {
-          max-width: 120px;
-        }
-        .download-btn {
-          font-size: 18px;
-          padding: 12px 18px;
-        }
-        .footer-logo {
-          height: 80px;
-        }
-      }
-
       @media (max-width: 480px) {
+        .mobile-view {
+          width: 100%; /* For small screens, take full width */
+          height: 100%; /* Full height */
+          border-radius: 0; /* Remove border radius */
+        }
+
         h1 {
           font-size: 1.8rem;
         }
@@ -164,42 +166,48 @@
     </style>
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <img class="suvidha-logo" src="./Suvidha Logo.png" alt="Suvidha Logo" />
-    </header>
+    <!-- Mobile View Container -->
+    <div class="mobile-view">
+      <!-- Header -->
+      <header>
+        <img class="suvidha-logo" src="./Suvidha Logo.png" alt="Suvidha Logo" />
+      </header>
 
-    <!-- Heading -->
-    <h1>To know more about Suvidha:</h1>
+      <!-- Main Content -->
+      <div class="content">
+        <!-- Heading -->
+        <h1>To know more about Suvidha:</h1>
 
-    <!-- Main content -->
-    <div class="container">
-      <div class="button-container">
-        <a
-          class="download-btn"
-          href="https://drive.google.com/uc?export=download&id=19AGWdsHpKPqUBkvJvaZWRKjRfFl1kLFo"
-          download
-          target="_blank"
-        >
-          Suvidha Playbook
-        </a>
-        <a
-          class="download-btn"
-          href="https://drive.google.com/uc?export=download&id=1morKotO3xpKwqgNoOdelQriKcVughYxq"
-          download
-          target="_blank"
-        >
-          Suvidha Presentation
-        </a>
+        <!-- Button Container -->
+        <div class="container">
+          <div class="button-container">
+            <a
+              class="download-btn"
+              href="https://drive.google.com/uc?export=download&id=19AGWdsHpKPqUBkvJvaZWRKjRfFl1kLFo"
+              download
+              target="_blank"
+            >
+              Suvidha Playbook
+            </a>
+            <a
+              class="download-btn"
+              href="https://drive.google.com/uc?export=download&id=1morKotO3xpKwqgNoOdelQriKcVughYxq"
+              download
+              target="_blank"
+            >
+              Suvidha Presentation
+            </a>
+          </div>
+        </div>
       </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="footer-logos">
+          <img class="footer-logo" src="./Strip.jpg" alt="Co-Partners" />
+        </div>
+        <p>© 2024 SUVIDHA. All Rights Reserved.</p>
+      </footer>
     </div>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-logos">
-        <img class="footer-logo" src="./Strip.jpg" alt="Co-Partners" />
-      </div>
-      <p>© 2024 SUVIDHA. All Rights Reserved.</p>
-    </footer>
   </body>
 </html>
